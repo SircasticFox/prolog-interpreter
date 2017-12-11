@@ -128,6 +128,7 @@ TERML: TERM com TERML { $$ = mergeList($1, $3);}
 	   | TERM {$$ = $1;};
 
 TERM: num {$$ = NULL;}
+    | id {$$ = NULL;}
     | id opa TERML cpa {$$ = $3;}
     | LIST {$$ = $1;};
 
