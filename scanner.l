@@ -8,7 +8,7 @@
 :- {return def;}
 , {return com;}
 [0-9]+(\.[0-9]+)? {return num;}
-[a-z][a-z0-9]* {return id;}
+[a-z][a-zA-Z0-9]* {return id;}
 [A-Z][A-Za-z0-9]* {yylval = yytext; return var;}
 \( {return opa;}
 \) {return cpa;}
