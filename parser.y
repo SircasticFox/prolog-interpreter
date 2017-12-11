@@ -128,7 +128,7 @@ TERML: TERM com TERML { $$ = mergeList($1, $3);}
 	   | TERM {$$ = $1;};
 
 TERM: num {$$ = NULL;}
-    | id {$$ = NULL;}
+    | id opa TERML cpa {$$ = $3;}
     | LIST {$$ = $1;};
 
 LIST: obr cbr {$$ = NULL;}
@@ -143,5 +143,5 @@ int main(void){
 }
 
 void yyerror(char *message){
-  printf("error %s\n", message);
+  printf("%s\n", message);
 }
